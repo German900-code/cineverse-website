@@ -1,13 +1,12 @@
 import { FiFilm, FiSearch } from "react-icons/fi";
-import { FiArrowDown, FiArrowUp } from "react-icons/fi";
-import { FaArrowDown, FaArrowAltCircleDown, FaArrowUp } from "react-icons/fa";
+import { FaArrowUp } from "react-icons/fa";
 import { useState } from "react";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-cyan-500/20 bg-black/90 px-4 py-4 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-cyan-500/20 bg-black/90 px-4 py-4 backdrop-blur-md shadow-cyan-300/20 shadow-md">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-around gap-y-5">
         <div className="flex justify-between items-center p-3">
           <h1 className="flex items-center gap-2 text-2xl font-bold text-cyan-400">

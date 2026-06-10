@@ -1,12 +1,16 @@
-import React from "react";
 import Header from "./components/Header";
+import Hero from "./components/Hero";
+import MovieGrid from "./components/MovieGrid";
 
 const App = () => {
   return (
-    <div>
+    <>
       <Header />
-      <main></main>
-    </div>
+      <main>
+        <Hero />
+        <MovieGrid />
+      </main>
+    </>
   );
 };
 
