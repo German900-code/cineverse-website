@@ -31,7 +31,7 @@ const Header = () => {
           </button>
         </div>
 
-        <nav className="flex items-center justify-around gap-8 text-sm font-medium md:justify-between">
+        <nav className="md:flex items-center justify-around gap-8 text-sm font-medium md:justify-between hidden ">
           <button className="text-slate-300 transition-colors duration-300 hover:text-cyan-400 cursor-pointer">
             Movies
           </button>

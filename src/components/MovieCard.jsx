@@ -1,7 +1,7 @@
 const MovieCard = ({ movie }) => {
   return (
-    <article className="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-cyan-500/20">
-      <div>
+    <article className="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-cyan-500/20 cursor-pointer">
+      <div className="overflow-hidden">
         <img
           src={movie.poster}
           alt={movie.title}
