@@ -1,6 +1,7 @@
 import { FiFilm, FiSearch } from "react-icons/fi";
 import { FaArrowUp } from "react-icons/fa";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,7 +12,7 @@ const Header = () => {
         <div className="flex justify-between items-center p-3">
           <h1 className="flex items-center gap-2 text-2xl font-bold text-cyan-400">
             <FiFilm className="text-cyan-300" />
-            CineWave
+            <Link to={"/"}>CineWave</Link>
           </h1>
           <button
             onClick={() => setIsVisible(!isVisible)}
@@ -32,15 +33,24 @@ const Header = () => {
         </div>
 
         <nav className="md:flex items-center justify-around gap-8 text-sm font-medium md:justify-between hidden ">
-          <button className="text-slate-300 transition-colors duration-300 hover:text-cyan-400 cursor-pointer">
+          <Link
+            to={"/movies"}
+            className="text-slate-300 transition-colors duration-300 hover:text-cyan-400 cursor-pointer"
+          >
             Movies
-          </button>
-          <button className="text-slate-300 transition-colors duration-300 hover:text-cyan-400 cursor-pointer">
+          </Link>
+          <Link
+            to={"/tv-shows"}
+            className="text-slate-300 transition-colors duration-300 hover:text-cyan-400 cursor-pointer"
+          >
             TV Shows
-          </button>
-          <button className="text-slate-300 transition-colors duration-300 hover:text-cyan-400 cursor-pointer">
+          </Link>
+          <Link
+            to={"/favorites"}
+            className="text-slate-300 transition-colors duration-300 hover:text-cyan-400 cursor-pointer"
+          >
             Favorites
-          </button>
+          </Link>
         </nav>
         <form className="hidden gap-2 md:flex">
           <input

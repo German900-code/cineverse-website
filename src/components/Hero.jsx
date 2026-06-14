@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Hero = () => {
   return (
     <section className="relative min-h-[420px] overflow-hidden bg-slate-950 px-4 py-10 text-white md:min-h-[520px] md:px-8 lg:px-12">
@@ -20,7 +22,7 @@ const Hero = () => {
           <span>Sci-Fi</span>
         </div>
         <button className="mt-6 w-[50%] md:w-fit rounded-full cursor-pointer bg-cyan-500 px-6 py-3 font-semibold text-slate-950 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30">
-          View Details
+          <Link to={"/details"}>View Details</Link>
         </button>
       </div>
     </section>

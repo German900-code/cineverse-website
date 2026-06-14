@@ -7,7 +7,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className="pb-24">
         <Hero />
         <MovieGrid />
       </main>
