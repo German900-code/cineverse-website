@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import MovieCard from "./MovieCard";
+import MediaCard from "./MediaCard";
 
 const movies = [
   {
@@ -46,7 +46,7 @@ const MovieGrid = () => {
       </div>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
         {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
+          <MediaCard key={movie.id} item={movie} />
         ))}
       </div>
     </section>
