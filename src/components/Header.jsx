@@ -1,13 +1,19 @@
 import { FiFilm, FiSearch } from "react-icons/fi";
 import { FaArrowUp } from "react-icons/fa";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
 
+  const navItems = [
+    { label: "Movies", path: "/movies" },
+    { label: "TV Shows", path: "/tv-shows" },
+    { label: "Favorites", path: "/favorites" },
+  ];
+
   return (
-    <header className="sticky top-0 z-50 border-b border-cyan-500/20 bg-black/90 px-4 py-4 backdrop-blur-md shadow-cyan-300/20 shadow-md">
+    <header className="sticky top-0 z-50 border-b border-cyan-500/20 px-4 py-4 backdrop-blur-md shadow-cyan-300/20 shadow-md">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-around gap-y-5">
         <div className="flex justify-between items-center p-3">
           <h1 className="flex items-center gap-2 text-2xl font-bold text-cyan-400">
@@ -33,24 +39,18 @@ const Header = () => {
         </div>
 
         <nav className="md:flex items-center justify-around gap-8 text-sm font-medium md:justify-between hidden ">
-          <Link
-            to={"/movies"}
-            className="text-slate-300 transition-colors duration-300 hover:text-cyan-400 cursor-pointer"
-          >
-            Movies
-          </Link>
-          <Link
-            to={"/tv-shows"}
-            className="text-slate-300 transition-colors duration-300 hover:text-cyan-400 cursor-pointer"
-          >
-            TV Shows
-          </Link>
-          <Link
-            to={"/favorites"}
-            className="text-slate-300 transition-colors duration-300 hover:text-cyan-400 cursor-pointer"
-          >
-            Favorites
-          </Link>
+          {navItems.map((item) => (
+            <NavLink
+              to={item.path}
+              key={item.path}
+              className={({ isActive }) =>
+                `flex flex-col items-center text-xl transition-colors duration-300 ${isActive ? "text-cyan-400" : "text-white/60"} hover:text-cyan-500`
+              }
+              // className="text-slate-300 transition-colors duration-300 hover:text-cyan-400 cursor-pointer "
+            >
+              {item.label}
+            </NavLink>
+          ))}
         </nav>
         <form className="hidden gap-2 md:flex">
           <input

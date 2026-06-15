@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import Header from "./Header";
 import MobileNav from "./MobileNav";
 
@@ -6,6 +7,7 @@ const Movies = () => {
     <section>
       <Header />
       <MobileNav />
+      <Footer />
     </section>
   );
 };

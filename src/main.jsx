@@ -10,6 +10,7 @@ import NotFoundPage from "./components/NotFoundPage.jsx";
 import Movies from "./components/Movies.jsx";
 import TVShows from "./components/TVShows.jsx";
 import Favorites from "./components/Favorites.jsx";
+import TrendingMovies from "./components/TrendingMovies.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
   { path: "/movies", element: <Movies /> },
   { path: "/tv-shows", element: <TVShows /> },
   { path: "/favorites", element: <Favorites /> },
+  { path: "/trending", element: <TrendingMovies /> },
   { path: "*", element: <NotFoundPage /> },
 ]);
 

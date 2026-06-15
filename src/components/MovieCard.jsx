@@ -13,7 +13,7 @@ const MovieCard = ({ movie }) => {
           {movie.title}
         </h3>
         <div className="mt-3 flex items-center justify-between text-sm text-slate-400">
-          <span>{movie.rating}</span>
+          <span className="text-yellow-500">⭐ {movie.rating}</span>
           <span>{movie.year}</span>
         </div>
       </div>

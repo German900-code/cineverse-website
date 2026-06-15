@@ -1,15 +1,15 @@
-import Footer from "./Footer";
 import Header from "./Header";
 import MobileNav from "./MobileNav";
+import Footer from "./Footer";
 
-const TVShows = () => {
+const TrendingMovies = () => {
   return (
-    <section>
+    <div>
       <Header />
       <MobileNav />
       <Footer />
-    </section>
+    </div>
   );
 };
 
-export default TVShows;
+export default TrendingMovies;

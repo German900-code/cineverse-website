@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import MobileNav from "./components/MobileNav";
@@ -12,6 +13,7 @@ const App = () => {
         <MovieGrid />
       </main>
       <MobileNav />
+      <Footer />
     </>
   );
 };
