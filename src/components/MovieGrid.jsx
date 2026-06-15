@@ -34,7 +34,7 @@ const movies = [
 
 const MovieGrid = () => {
   return (
-    <section className="mx-auto  px-4 py-10 md:px-8 bg-black/90">
+    <section className="mx-auto px-4 py-10 md:px-8 bg-black/90">
       <div className="mb-6 flex items-center justify-between">
         <h2 className="text-2xl font-bold text-slate-50">Trending Movies</h2>
         <NavLink

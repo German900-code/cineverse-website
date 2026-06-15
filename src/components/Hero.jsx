@@ -6,7 +6,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[url('https://image.tmdb.org/t/p/original/8rpDcsfLJypbO6vREc0547VKqEv.jpg')] bg-cover bg-center opacity-80 " />
       <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
       <div className="relative z-10 mx-auto flex max-w-7xl flex-col justify-end pt-32 md:pt-48">
-        <span className="mb-4 w-[50%] md:w-fit text-center rounded-full border border-cyan-500/30 bg-cyan500/10 px-4 py-2 text-sm font-medium text-cyan-300">
+        <span className="mb-4 w-[50%] md:w-fit text-center rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-300">
           🔥 Trending now
         </span>
         <h2 className="max-w-2xl text-4xl font-bold md:text-6xl">Avatar</h2>

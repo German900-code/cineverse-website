@@ -10,13 +10,14 @@ const MobileNav = () => {
   ];
 
   return (
-    <nav className="fixed bottom-5 left-1/2 z-50 flex -translate-x-1/2 items-center gap-7 rounded-full border border-white/10 bg-white/10 px-6 py-3 text-white/60 shadow-lg backdrop-blur-md md:hidden">
+    <nav className="fixed bottom-5 left-1/2 z-50 flex -translate-x-1/2 items-center gap-7 rounded-full border border-white/10 bg-white/10 px-6 py-3 text-white/60 shadow-lg backdrop-blur-md md:hidden ">
       {navItems.map((item) => (
         <NavLink
           key={item.path}
           to={item.path}
           className={({ isActive }) =>
-            `flex flex-col items-center text-xs transition-colors duration-300 ${isActive ? "text-cyan-400" : "text-white/60"}`
+            `
+           flex flex-col items-center text-xs transition-colors shadow-2xl  rounded-full duration-300 ${isActive ? "text-cyan-400 before:bg-[radial-gradient(circle_at_center,rgba(80,120,140,0.25)_0%,rgba(80,120,140,0.25)_35%,transparent_70%)] shadow-[0_0_25px_rgba(80,120,140,0.25)]" : "text-white/60"}`
           }
         >
           {item.icon}
