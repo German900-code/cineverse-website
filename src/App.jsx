@@ -1,3 +1,5 @@
+import { Outlet } from "react-router-dom";
+
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -8,10 +10,12 @@ const App = () => {
   return (
     <>
       <Header />
-      <main className="pb-24">
+
+      <Outlet />
+      {/* <main className="pb-24">
         <Hero />
         <MovieGrid />
-      </main>
+      </main> */}
       <MobileNav />
       <Footer />
     </>

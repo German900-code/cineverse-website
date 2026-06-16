@@ -3,13 +3,7 @@ import MobileNav from "./MobileNav";
 import Footer from "./Footer";
 
 const Favorites = () => {
-  return (
-    <section>
-      <Header />
-      <MobileNav />
-      <Footer />
-    </section>
-  );
+  return <section></section>;
 };
 
 export default Favorites;

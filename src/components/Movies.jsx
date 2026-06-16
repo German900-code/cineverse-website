@@ -37,7 +37,6 @@ const Movies = () => {
   ];
   return (
     <>
-      <Header />
       <section className="mx-auto px-4 py-10 md:px-8 bg-black/90">
         <div className="mb-6 flex items-center justify-between">
           <h2 className="text-2xl font-bold text-slate-50">Popular Movies</h2>
@@ -54,8 +53,6 @@ const Movies = () => {
           ))}
         </div>
       </section>
-      <MobileNav />
-      <Footer />
     </>
   );
 };
