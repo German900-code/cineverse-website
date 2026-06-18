@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import MediaCard from "./MediaCard";
+import { FaArrowCircleRight, FaArrowRight } from "react-icons/fa";
 
 const movies = [
   {
@@ -39,9 +40,12 @@ const MovieGrid = () => {
         <h2 className="text-2xl font-bold text-slate-50">Trending Movies</h2>
         <NavLink
           to={"/trending"}
-          className="cursor-pointer hover:underline  hover:text-cyan-500 rounded-full p-5 text-sm font-medium text-cyan-400 transition-colors duration-300 "
+          className="flex flex-row cursor-pointer hover:underline  hover:text-cyan-500 rounded-full p-5 text-sm font-medium text-cyan-400 transition-colors duration-300 "
         >
-          View All
+          <span className="flex items-center gap-2">
+            <FaArrowCircleRight />
+            <p>View All</p>
+          </span>
         </NavLink>
       </div>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">

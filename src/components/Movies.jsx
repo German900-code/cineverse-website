@@ -8,6 +8,7 @@ const Movies = () => {
   const movieList = [
     {
       id: 1,
+      type: "movie",
       title: "Dune: Part Two",
       year: "2024",
       rating: 8.2,
@@ -15,6 +16,7 @@ const Movies = () => {
     },
     {
       id: 2,
+      type: "movie",
       title: "Interstellar",
       year: "2014",
       rating: 8.7,
@@ -22,6 +24,7 @@ const Movies = () => {
     },
     {
       id: 3,
+      type: "movie",
       title: "The Dark Knight",
       year: "2008",
       rating: 9.0,
@@ -29,6 +32,7 @@ const Movies = () => {
     },
     {
       id: 4,
+      type: "movie",
       title: "Spider-Man: Across the Spider-Verse",
       year: "2023",
       rating: 8.6,

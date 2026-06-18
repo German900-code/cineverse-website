@@ -29,7 +29,7 @@ const MediaCard = ({ item }) => {
   };
 
   useEffect(() => {
-    const savedFavorites = JSON.parse(localStorage.getItem("favorites"));
+    const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     const ifExist = savedFavorites.some((favorite) => favorite.id === item.id);
     if (ifExist) {
       setIsFavorite(true);

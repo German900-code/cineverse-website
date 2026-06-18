@@ -7,6 +7,7 @@ const TVShows = () => {
   const tvShowList = [
     {
       id: 1,
+      type: "tv",
       title: "Off Campus",
       year: "2026",
       rating: 8.0,
@@ -15,6 +16,7 @@ const TVShows = () => {
     },
     {
       id: 2,
+      type: "tv",
       title: "The Last of Us",
       year: "2023",
       rating: 9.2,
@@ -23,6 +25,7 @@ const TVShows = () => {
     },
     {
       id: 3,
+      type: "tv",
       title: "Dutton Ranch",
       year: "2026",
       rating: 8.4,
@@ -33,7 +36,7 @@ const TVShows = () => {
   return (
     <section className="mx-auto px-4 py-10 md:px-8 bg-black/90">
       <div className="mb-6 flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-slate-500">Popular TV Shows</h2>
+        <h2 className="text-2xl font-bold text-slate-50">Popular TV Shows</h2>
         <NavLink
           to={"/"}
           className="cursor-pointer hover:underline  hover:text-cyan-500 rounded-full p-5 text-sm font-medium text-cyan-400 transition-colors duration-300 "
