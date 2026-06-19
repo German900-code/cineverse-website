@@ -3,7 +3,7 @@ import { FaHeart } from "react-icons/fa";
 
 // Мне нужно чтобы цвет сердца был  в localstorage
 
-const MediaCard = ({ item }) => {
+const MediaCard = ({ item, onRemoveFavorite }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const addToFavorites = () => {
@@ -18,6 +18,7 @@ const MediaCard = ({ item }) => {
         (favorite) => favorite.id !== item.id,
       );
       localStorage.setItem("favorites", JSON.stringify(filteredFavorites));
+      onRemoveFavorite?.(item.id);
       setIsFavorite(false);
     } else {
       localStorage.setItem(
@@ -31,6 +32,7 @@ const MediaCard = ({ item }) => {
   useEffect(() => {
     const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     const ifExist = savedFavorites.some((favorite) => favorite.id === item.id);
+    onRemoveFavorite?.(item.id);
     if (ifExist) {
       setIsFavorite(true);
     } else {

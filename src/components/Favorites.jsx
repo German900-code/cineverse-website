@@ -6,6 +6,18 @@ const Favorites = () => {
   const [favoritesMovies, setFavoritesMovies] = useState([]);
   const [favoritesTVShows, setFavoritesTVShows] = useState([]);
 
+  const handleRemoveFavorite = (id) => {
+    const updatedFavoritesMovies = favoritesMovies.filter(
+      (item) => item.id !== id,
+    );
+    const updatedFavoritesShows = favoritesTVShows.filter(
+      (item) => item.id !== id,
+    );
+
+    setFavoritesMovies(updatedFavoritesMovies);
+    setFavoritesTVShows(updatedFavoritesShows);
+  };
+
   useEffect(() => {
     const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     setFavoritesMovies(savedFavorites.filter((item) => item.type === "movie"));
@@ -33,12 +45,18 @@ const Favorites = () => {
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {favoritesMovies.map((item) => (
-              <MediaCard key={item.id} item={item} />
+              <MediaCard
+                key={item.id}
+                item={item}
+                onRemoveFavorite={handleRemoveFavorite}
+              />
             ))}
           </div>
         </>
       )}
-      <hr className="my-8 border-slate-600" />
+      {favoritesMovies.length > 0 && favoritesTVShows.length > 0 && (
+        <hr className="my-8 border-slate-600" />
+      )}
       {favoritesTVShows.length > 0 && (
         <>
           <div className="flex flex-row items-center gap-3 mb-5 mt-5">
@@ -47,7 +65,11 @@ const Favorites = () => {
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {favoritesTVShows.map((item) => (
-              <MediaCard key={item.id} item={item} />
+              <MediaCard
+                key={item.id}
+                item={item}
+                onRemoveFavorite={handleRemoveFavorite}
+              />
             ))}
           </div>
         </>
