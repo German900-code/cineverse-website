@@ -12,6 +12,7 @@ import Movies from "./components/Movies.jsx";
 import TVShows from "./components/TVShows.jsx";
 import Favorites from "./components/Favorites.jsx";
 import TrendingMovies from "./components/TrendingMovies.jsx";
+import SearchResults from "./components/SearchResults.jsx";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "trending",
         element: <TrendingMovies />,
+      },
+      {
+        path: "search",
+        element: <SearchResults />,
       },
       {
         path: "*",

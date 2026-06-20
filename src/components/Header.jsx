@@ -1,10 +1,28 @@
 import { FiFilm, FiSearch } from "react-icons/fi";
 import { FaArrowUp } from "react-icons/fa";
 import { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+  const navigate = useNavigate();
+
+  const handleChangeValue = (e) => {
+    setInputValue(e.target.value);
+    // console.log(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const trimmedValue = inputValue.trim();
+
+    if (!trimmedValue) return;
+
+    navigate(`/search?query=${encodeURIComponent(trimmedValue)}`);
+    setInputValue("");
+    setIsVisible(false);
+  };
 
   const navItems = [
     { label: "Movies", path: "/movies" },
@@ -52,10 +70,12 @@ const Header = () => {
             </NavLink>
           ))}
         </nav>
-        <form className="hidden gap-2 md:flex">
+        <form onSubmit={handleSubmit} className="hidden gap-2 md:flex">
           <input
             type="text"
-            placeholder="Enter movie name"
+            value={inputValue}
+            onChange={handleChangeValue}
+            placeholder="Enter movie or TV show name"
             className="h-12 w-80 rounded-full border border-cyan-500/30 bg-slate-900 px-5 text-slate-100 placeholder:text-slate-500 outline-none transition-all duration-300 focus:border-cyan-400 focus:shadow-lg focus:shadow-cyan-500/20"
           />
 
@@ -70,13 +90,16 @@ const Header = () => {
 
         {/* Mobile search */}
         <form
+          onSubmit={handleSubmit}
           className={`flex flex-col gap-2 overflow-hidden transition-all duration-300 md:hidden ${
             isVisible ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
           <input
             type="text"
-            placeholder="Enter movie name"
+            value={inputValue}
+            onChange={handleChangeValue}
+            placeholder="Enter movie or TV show name"
             className="h-12 w-full rounded-full border border-cyan-500/30 bg-slate-900 px-5 text-slate-100 placeholder:text-slate-500 outline-none transition-all duration-300 focus:border-cyan-400 focus:shadow-lg focus:shadow-cyan-500/20"
           />
 

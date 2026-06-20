@@ -3,6 +3,7 @@ import Header from "./Header";
 import MobileNav from "./MobileNav";
 import MediaCard from "./MediaCard";
 import { NavLink } from "react-router-dom";
+import { FaArrowCircleLeft } from "react-icons/fa";
 
 const Movies = () => {
   const movieList = [
@@ -48,7 +49,10 @@ const Movies = () => {
             to={"/"}
             className="cursor-pointer hover:underline  hover:text-cyan-500 rounded-full p-5 text-sm font-medium text-cyan-400 transition-colors duration-300 "
           >
-            Back home
+            <span className="flex items-center gap-2">
+              <FaArrowCircleLeft />
+              <p>Back home</p>
+            </span>
           </NavLink>
         </div>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
