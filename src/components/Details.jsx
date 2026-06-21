@@ -5,38 +5,12 @@ import Footer from "./Footer";
 import { main, span } from "framer-motion/client";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { moveItem } from "framer-motion";
-
-const movies = [
-  {
-    id: 1,
-    title: "Interstellar",
-    year: "2014",
-    rating: 8.7,
-    poster:
-      "https://www.themoviedb.org/t/p/w1280/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
-    description:
-      "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-    genre: ["Sci-Fi", "Drama", "Adventure"],
-    duration: "2h 49m",
-  },
-  {
-    id: 2,
-    title: "The Batman",
-    year: "2022",
-    rating: 7.8,
-    poster:
-      "https://www.themoviedb.org/t/p/w1280/74xTEgt7R36Fpooo50r9T25onhq.jpg",
-    description:
-      "Batman ventures into Gotham City's underworld when a sadistic killer leaves behind cryptic clues.",
-    genre: ["Action", "Crime", "Drama"],
-    duration: "2h 56m",
-  },
-];
+import { mediaData } from "../data/mediaData";
 
 const Details = () => {
   const { id } = useParams();
 
-  const movie = movies.find((movie) => movie.id === Number(id));
+  const movie = mediaData.find((item) => item.id === Number(id));
 
   if (!movie) {
     return (

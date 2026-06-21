@@ -1,0 +1,80 @@
+export const mediaData = [
+  {
+    id: 1,
+    title: "Interstellar",
+    type: "movie",
+    genre: "Sci-Fi",
+    releaseYear: 2014,
+    rating: 8.6,
+    description:
+      "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+    imageUrl:
+      "https://www.themoviedb.org/t/p/w1280/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+  },
+  {
+    id: 2,
+    title: "The last of Us",
+    type: "tv-show",
+    genre: "Drama",
+    releaseYear: 2023,
+    rating: 9.5,
+    description:
+      "In a post-apocalyptic world, a hardened survivor takes on the responsibility of protecting a young girl who may hold the key to humanity's survival.",
+    imageUrl: "https://image.tmdb.org/t/p/w500/1rO4xoCo4Z3Cea0NwjPTA0m8LmW.jpg",
+  },
+  {
+    id: 3,
+    title: "Inception",
+    type: "movie",
+    genre: "Action",
+    releaseYear: 2010,
+    rating: 8.8,
+    description:
+      "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+    imageUrl: "https://image.tmdb.org/t/p/w500/9gk7adHYe8AR62X9Dv74w9L5U3s.jpg",
+  },
+  {
+    id: 4,
+    title: "Breaking Bad",
+    type: "tv-show",
+    genre: "Crime",
+    releaseYear: 2008,
+    rating: 9.5,
+    description:
+      "A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine in order to secure his family's future.",
+    imageUrl: "https://image.tmdb.org/t/p/w500/1rO4xoCo4Z3Cea0NwjPTA0m8LmW.jpg",
+  },
+  {
+    id: 5,
+    title: "The Dark Knight",
+    type: "movie",
+    genre: "Action",
+    releaseYear: 2008,
+    rating: 9.0,
+    description:
+      "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham. The Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+    imageUrl: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+  },
+  {
+    id: 6,
+    title: "Off campus",
+    type: "tv-show",
+    genre: "Comedy",
+    releaseYear: 2026,
+    rating: 8.0,
+    description:
+      "A group of college students navigate the challenges of life, love, and friendship while living off campus.",
+    imageUrl: "https://image.tmdb.org/t/p/w500/cbODFqkcmRgrYH8NkG4Q4Hcg8Z1.jpg",
+  },
+  {
+    id: 7,
+    title: "Dutton Ranch",
+    type: "tv-show",
+    genre: "Drama",
+    releaseYear: 2026,
+    rating: 8.4,
+    description:
+      "The Dutton family struggles to maintain their ranch and legacy in the face of outside threats and internal conflicts.",
+    imageUrl: "https://image.tmdb.org/t/p/w500/xsiecCxd8lkcAluw0wWwbW5CwSv.jpg",
+  },
+];
