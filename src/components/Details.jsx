@@ -6,6 +6,7 @@ import { main, span } from "framer-motion/client";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { moveItem } from "framer-motion";
 import { mediaData } from "../data/mediaData";
+import NavButton from "./NavButton";
 
 const Details = () => {
   const { id } = useParams();
@@ -16,12 +17,17 @@ const Details = () => {
     return (
       <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center">
         <h1 className="text-3xl font-bold text-red-400">Movie not found</h1>
-        <NavLink
+        <NavButton
+          path={"/movies"}
+          label="Back to movies"
+          icon={<FaArrowAltCircleLeft />}
+        />
+        {/* <NavLink
           to="/movies"
           className="mt-4 rounded-lg bg-cyan-500 px-5 py-2 text-black font-semibold"
         >
           Back to Movies
-        </NavLink>
+        </NavLink> */}
       </main>
     );
   }

@@ -77,4 +77,37 @@ export const mediaData = [
       "The Dutton family struggles to maintain their ranch and legacy in the face of outside threats and internal conflicts.",
     imageUrl: "https://image.tmdb.org/t/p/w500/xsiecCxd8lkcAluw0wWwbW5CwSv.jpg",
   },
+  {
+    id: 8,
+    title: "The Matrix",
+    type: "movie",
+    genre: "Sci-Fi",
+    releaseYear: 1999,
+    rating: 8.7,
+    description:
+      "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+    imageUrl: "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
+  },
+  {
+    id: 9,
+    title: "The Dark knight",
+    type: "movie",
+    genre: "Action",
+    releaseYear: 2008,
+    rating: 9.0,
+    description:
+      "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham. The Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+    imageUrl: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+  },
+  {
+    id: 10,
+    title: "Transformers last knight",
+    type: "movie",
+    genre: "Action",
+    releaseYear: 2017,
+    rating: 5.2,
+    description:
+      "Autobots and Decepticons are at war, with humans on the sidelines. Optimus Prime is gone. The key to saving our future lies buried in the secrets of the past, in the hidden history of Transformers on Earth.",
+    imageUrl: "https://image.tmdb.org/t/p/w500/5dExO5G2iaaTxYnLIFKLWofDzyI.jpg",
+  },
 ];
