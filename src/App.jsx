@@ -10,12 +10,7 @@ const App = () => {
   return (
     <>
       <Header />
-
       <Outlet />
-      {/* <main className="pb-24">
-        <Hero />
-        <MovieGrid />
-      </main> */}
       <MobileNav />
       <Footer />
     </>

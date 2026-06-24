@@ -1,6 +1,18 @@
 export const mediaData = [
   {
     id: 1,
+    title: "Avatar",
+    type: "movie",
+    genre: "Sci-Fi",
+    releaseYear: 2024,
+    rating: 7.9,
+    description:
+      "Jake Sully and Neytiri have formed a family and are doing everything to stay together. However, they must leave their home and explore the regions of Pandora. When an ancient threat resurfaces, Jake must fight a difficult war against the humans.",
+    imageUrl:
+      "https://www.themoviedb.org/t/p/w1280/8rpDcsfLJypbO6vREc0547VKqEv.jpg",
+  },
+  {
+    id: 2,
     title: "Interstellar",
     type: "movie",
     genre: "Sci-Fi",
@@ -12,7 +24,7 @@ export const mediaData = [
       "https://www.themoviedb.org/t/p/w1280/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
   },
   {
-    id: 2,
+    id: 3,
     title: "The last of Us",
     type: "tv-show",
     genre: "Drama",
@@ -23,7 +35,7 @@ export const mediaData = [
     imageUrl: "https://image.tmdb.org/t/p/w500/1rO4xoCo4Z3Cea0NwjPTA0m8LmW.jpg",
   },
   {
-    id: 3,
+    id: 4,
     title: "Inception",
     type: "movie",
     genre: "Action",
@@ -34,7 +46,7 @@ export const mediaData = [
     imageUrl: "https://image.tmdb.org/t/p/w500/9gk7adHYe8AR62X9Dv74w9L5U3s.jpg",
   },
   {
-    id: 4,
+    id: 5,
     title: "Breaking Bad",
     type: "tv-show",
     genre: "Crime",
@@ -45,7 +57,7 @@ export const mediaData = [
     imageUrl: "https://image.tmdb.org/t/p/w500/1rO4xoCo4Z3Cea0NwjPTA0m8LmW.jpg",
   },
   {
-    id: 5,
+    id: 6,
     title: "The Dark Knight",
     type: "movie",
     genre: "Action",
@@ -56,7 +68,7 @@ export const mediaData = [
     imageUrl: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
   },
   {
-    id: 6,
+    id: 7,
     title: "Off campus",
     type: "tv-show",
     genre: "Comedy",
@@ -67,7 +79,7 @@ export const mediaData = [
     imageUrl: "https://image.tmdb.org/t/p/w500/cbODFqkcmRgrYH8NkG4Q4Hcg8Z1.jpg",
   },
   {
-    id: 7,
+    id: 8,
     title: "Dutton Ranch",
     type: "tv-show",
     genre: "Drama",
@@ -78,7 +90,7 @@ export const mediaData = [
     imageUrl: "https://image.tmdb.org/t/p/w500/xsiecCxd8lkcAluw0wWwbW5CwSv.jpg",
   },
   {
-    id: 8,
+    id: 9,
     title: "The Matrix",
     type: "movie",
     genre: "Sci-Fi",
@@ -89,7 +101,7 @@ export const mediaData = [
     imageUrl: "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
   },
   {
-    id: 9,
+    id: 10,
     title: "The Dark knight",
     type: "movie",
     genre: "Action",
@@ -100,7 +112,7 @@ export const mediaData = [
     imageUrl: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
   },
   {
-    id: 10,
+    id: 11,
     title: "Transformers last knight",
     type: "movie",
     genre: "Action",

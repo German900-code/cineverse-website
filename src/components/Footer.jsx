@@ -21,7 +21,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="border-t border-white/10 pt-3 text-center text-sm text-white/60">
+    <footer className="border-t border-white/10 pt-3 text-center text-sm text-white/60 rounded-t-3xl">
       <div className="flex gap-3 justify-center mt-3 mb-3 text-xl text-white/60">
         {socialLinks.map((link) => (
           <NavLink to={link.url} key={link.id} target="_blank">

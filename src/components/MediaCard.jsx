@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { FaHeart } from "react-icons/fa";
-
-// Мне нужно чтобы цвет сердца был  в localstorage
+import { FaArrowCircleRight, FaHeart } from "react-icons/fa";
+import NavButton from "./NavButton";
 
 const MediaCard = ({ item, onRemoveFavorite }) => {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -62,6 +61,11 @@ const MediaCard = ({ item, onRemoveFavorite }) => {
             />
           </button>
         </div>
+        <NavButton
+          path={"/details/:id"}
+          label="View details"
+          icon={<FaArrowCircleRight />}
+        />
       </div>
     </article>
   );

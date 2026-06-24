@@ -1,6 +1,7 @@
-import { FaHeart } from "react-icons/fa";
+import { FaArrowAltCircleLeft, FaHeart } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import MediaCard from "./MediaCard";
+import NavButton from "./NavButton";
 
 const Favorites = () => {
   const [favoritesMovies, setFavoritesMovies] = useState([]);
@@ -39,9 +40,17 @@ const Favorites = () => {
       )}
       {favoritesMovies.length > 0 && (
         <>
-          <div className="flex flex-row items-center gap-3 mb-5 mt-5">
-            <FaHeart className="text-2xl text-red-500" />
-            <h2 className="text-2xl text-white">Your Favorite movies</h2>
+          <div className="flex flex-row items-center gap-3 mb-5 mt-5 justify-between">
+            <div className="flex items-center gap-3">
+              <FaHeart className="text-2xl text-red-500" />
+              <h2 className="text-2xl text-white">Your Favorite movies</h2>
+            </div>
+
+            <NavButton
+              path={"/"}
+              label="Back home"
+              icon={<FaArrowAltCircleLeft />}
+            />
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {favoritesMovies.map((item) => (

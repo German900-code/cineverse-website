@@ -31,7 +31,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b rounded-b-3xl rounded-t-3xl border-cyan-500/20 px-4 py-3 backdrop-blur-md shadow-cyan-300/20 shadow-md">
+    <header className="sticky top-0 z-50 border-b rounded-b-3xl rounded-t-3xl border-cyan-500/20 px-4 py-3 backdrop-blur-md shadow-cyan-300/20 shadow-md w-full">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-around gap-y-5">
         <div className="flex justify-between items-center p-3">
           <h1 className="flex items-center gap-2 text-3xl font-bold text-cyan-400">

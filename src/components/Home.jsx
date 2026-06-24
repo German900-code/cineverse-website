@@ -1,4 +1,3 @@
-import React from "react";
 import MovieGrid from "./MovieGrid";
 import Hero from "./Hero";
 
