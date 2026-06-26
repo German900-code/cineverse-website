@@ -22,7 +22,9 @@ const Favorites = () => {
   useEffect(() => {
     const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     setFavoritesMovies(savedFavorites.filter((item) => item.type === "movie"));
-    setFavoritesTVShows(savedFavorites.filter((item) => item.type === "tv"));
+    setFavoritesTVShows(
+      savedFavorites.filter((item) => item.type === "tv-show"),
+    );
   }, []);
 
   return (
@@ -40,8 +42,8 @@ const Favorites = () => {
       )}
       {favoritesMovies.length > 0 && (
         <>
-          <div className="flex flex-row items-center gap-3 mb-5 mt-5 justify-between">
-            <div className="flex items-center gap-3">
+          <div className="flex flex-col items-center gap-3 mb-5 mt-5 justify-between md:flex-row">
+            <div className="flex items-center gap-3 ">
               <FaHeart className="text-2xl text-red-500" />
               <h2 className="text-2xl text-white">Your Favorite movies</h2>
             </div>
@@ -68,7 +70,7 @@ const Favorites = () => {
       )}
       {favoritesTVShows.length > 0 && (
         <>
-          <div className="flex flex-row items-center gap-3 mb-5 mt-5">
+          <div className="flex flex-col items-center gap-3 mb-5 mt-5 md:flex-row">
             <FaHeart className="text-2xl text-red-500" />
             <h2 className="text-2xl text-white">Your Favorite TV shows</h2>
           </div>

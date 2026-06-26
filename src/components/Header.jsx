@@ -31,7 +31,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b rounded-b-3xl rounded-t-3xl border-cyan-500/20 px-4 py-3 backdrop-blur-md shadow-cyan-300/20 shadow-md w-full">
+    <header className="sticky top-2 z-50 border-b rounded-b-3xl rounded-t-3xl border-cyan-500/20 px-4 py-3 backdrop-blur-md shadow-cyan-300/20 shadow-md w-[90%] mx-auto bg-slate-950/80 md:w-[95%] lg:w-[90%]">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-around gap-y-5">
         <div className="flex justify-between items-center p-3">
           <h1 className="flex items-center gap-2 text-3xl font-bold text-cyan-400">
@@ -62,7 +62,7 @@ const Header = () => {
               to={item.path}
               key={item.path}
               className={({ isActive }) =>
-                `flex flex-col items-center text-xl transition-colors duration-300 ${isActive ? "text-cyan-400" : "text-white/60"} hover:text-cyan-500`
+                `flex flex-col items-center text-xl transition-colors duration-300 ${isActive ? "text-cyan-400 underline" : "text-white/60"} hover:text-cyan-500`
               }
               // className="text-slate-300 transition-colors duration-300 hover:text-cyan-400 cursor-pointer "
             >

@@ -43,7 +43,7 @@ const MediaCard = ({ item, onRemoveFavorite }) => {
     <article className="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-cyan-500/20 cursor-pointer">
       <div className="overflow-hidden">
         <img
-          src={item.poster}
+          src={item.imageUrl || item.poster_path || item.backdrop_path}
           alt={item.title || item.name}
           className="h-65 w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-80"
         />
@@ -62,7 +62,7 @@ const MediaCard = ({ item, onRemoveFavorite }) => {
           </button>
         </div>
         <NavButton
-          path={"/details/:id"}
+          path={`/details/${item.id}`}
           label="View details"
           icon={<FaArrowCircleRight />}
         />

@@ -113,13 +113,13 @@ export const mediaData = [
   },
   {
     id: 11,
-    title: "Transformers last knight",
+    title: "Boss Baby",
     type: "movie",
-    genre: "Action",
+    genre: "Animation",
     releaseYear: 2017,
-    rating: 5.2,
+    rating: 6.4,
     description:
-      "Autobots and Decepticons are at war, with humans on the sidelines. Optimus Prime is gone. The key to saving our future lies buried in the secrets of the past, in the hidden history of Transformers on Earth.",
+      "A suit-wearing, briefcase-carrying baby pairs up with his 7-year-old brother to stop the dastardly plot of the CEO of Puppy Co.",
     imageUrl: "https://image.tmdb.org/t/p/w500/5dExO5G2iaaTxYnLIFKLWofDzyI.jpg",
   },
 ];

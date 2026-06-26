@@ -1,8 +1,4 @@
-import Footer from "./Footer";
-import Header from "./Header";
-import MobileNav from "./MobileNav";
 import MediaCard from "./MediaCard";
-import { NavLink } from "react-router-dom";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { mediaData } from "../data/mediaData";
 import NavButton from "./NavButton";

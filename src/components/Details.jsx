@@ -58,21 +58,18 @@ const Details = () => {
             </div>
 
             <div className="mt-5 flex flex-wrap gap-2">
-              {movie?.genre?.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-cyan-500/30 px-3 py-1 text-sm text-cyan-300"
-                >
-                  {item}
-                </span>
-              ))}
+              {/* {movie?.genre?.map((item) => ( */}
+              <span className="rounded-full border border-cyan-500/30 px-3 py-1 text-sm text-cyan-300">
+                {movie?.genre}
+              </span>
+              {/* ))} */}
             </div>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-300">
               {movie?.description}
             </p>
 
-            <button className="mt-8 rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-black transition hover:bg-cyan-400">
+            <button className="mt-8 cursor-pointer rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-black transition hover:bg-cyan-400">
               Add to Favorites
             </button>
           </div>
