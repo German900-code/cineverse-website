@@ -6,10 +6,10 @@ const NavButton = ({ path, label, icon }) => {
       to={path}
       className="cursor-pointer hover:underline  hover:text-cyan-500 rounded-full p-5 text-sm font-medium text-cyan-400 transition-colors duration-300 "
     >
-      <span className="flex items-center gap-2">
+      <div className="flex items-center gap-2">
         {icon}
         <p>{label}</p>
-      </span>
+      </div>
     </NavLink>
   );
 };

@@ -3,7 +3,8 @@ import MediaCard from "./MediaCard";
 import { FaArrowCircleRight, FaArrowRight } from "react-icons/fa";
 import { mediaData } from "../data/mediaData";
 
-const MovieGrid = () => {
+const MovieGrid = ({ movies }) => {
+  // const heroMovie = movies[0];
   return (
     <section className="mx-auto px-4 py-10 md:px-8 bg-black/90">
       <div className="mb-6 flex items-center justify-between">
@@ -19,11 +20,9 @@ const MovieGrid = () => {
         </NavLink>
       </div>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-        {mediaData
-          .filter((item) => item.type === "movie")
-          .map((item) => (
-            <MediaCard key={item.id} item={item} />
-          ))}
+        {movies.slice(1, 7).map((item) => (
+          <MediaCard key={item.id} item={item} />
+        ))}
       </div>
     </section>
   );

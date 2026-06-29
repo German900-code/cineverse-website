@@ -38,6 +38,11 @@ const Favorites = () => {
           <p className="mt-2 max-w-max text-slate-500">
             Movies and TV shows you like will appear here
           </p>
+          <NavButton
+            path={"/"}
+            label="Back home"
+            icon={<FaArrowAltCircleLeft />}
+          />
         </div>
       )}
       {favoritesMovies.length > 0 && (

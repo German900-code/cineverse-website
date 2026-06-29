@@ -28,6 +28,8 @@ const MediaCard = ({ item, onRemoveFavorite }) => {
     }
   };
 
+  // const image = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+
   useEffect(() => {
     const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     const ifExist = savedFavorites.some((favorite) => favorite.id === item.id);
@@ -43,7 +45,7 @@ const MediaCard = ({ item, onRemoveFavorite }) => {
     <article className="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-cyan-500/20 cursor-pointer">
       <div className="overflow-hidden">
         <img
-          src={item.imageUrl || item.poster_path || item.backdrop_path}
+          src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
           alt={item.title || item.name}
           className="h-65 w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-80"
         />
@@ -53,8 +55,12 @@ const MediaCard = ({ item, onRemoveFavorite }) => {
           {item.title || item.name}
         </h3>
         <div className="mt-3 flex items-center justify-between text-sm text-slate-400">
-          <span className="text-yellow-500">⭐ {item.rating}</span>
-          <span>{item.release_date || item.first_air_date}</span>
+          <span className="text-yellow-500">
+            ⭐ {item.rating || Math.floor(item.vote_average)}
+          </span>
+          <span>
+            {new Date(item.release_date || item.first_air_date).getFullYear()}
+          </span>
           <button onClick={addToFavorites} className="cursor-pointer">
             <FaHeart
               className={`text-2xl ${isFavorite ? "text-red-500" : "text-slate-500"}`}
