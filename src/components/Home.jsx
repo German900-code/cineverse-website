@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { getPopularMovies, getTrendingMovies } from "../api/tmdb";
+import { FaArrowCircleRight } from "react-icons/fa";
 
-import MovieGrid from "./MovieGrid";
+import MediaGrid from "./MediaGrid";
+import NavButton from "./NavButton";
 import Hero from "./Hero";
 
 const Home = () => {
@@ -19,7 +21,17 @@ const Home = () => {
   return (
     <section>
       <Hero heroMovie={heroMovie} />
-      <MovieGrid movies={popularMovies} />
+      <main className="mx-auto px-4 py-10 md:px-8 bg-black/90">
+        <div className="mb-6 flex items-center justify-between">
+          <h2 className="text-2xl font-bold text-slate-50">Trending Movies</h2>
+          <NavButton
+            path={"/trending"}
+            label="View all trending movies"
+            icon={<FaArrowCircleRight />}
+          />
+        </div>
+        <MediaGrid movies={popularMovies.slice(0, 5)} />
+      </main>
     </section>
   );
 };

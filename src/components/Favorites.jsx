@@ -50,7 +50,7 @@ const Favorites = () => {
           <div className="flex flex-col items-center gap-3 mb-5 mt-5 justify-between md:flex-row">
             <div className="flex items-center gap-3 ">
               <FaHeart className="text-2xl text-red-500" />
-              <h2 className="text-2xl text-white">Your Favorite movies</h2>
+              <h2 className="text-2xl text-white">Your Favorite Movies</h2>
             </div>
 
             <NavButton
@@ -77,7 +77,7 @@ const Favorites = () => {
         <>
           <div className="flex flex-col items-center gap-3 mb-5 mt-5 md:flex-row">
             <FaHeart className="text-2xl text-red-500" />
-            <h2 className="text-2xl text-white">Your Favorite TV shows</h2>
+            <h2 className="text-2xl text-white">Your Favorite TV Shows</h2>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {favoritesTVShows.map((item) => (
