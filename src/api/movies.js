@@ -1,15 +1,4 @@
-// export const getPopularMovies = async () => {
-//   const response = await fetch("url");
-// };
-
-const BASE_URL = "https://api.themoviedb.org/3";
-
-const options = {
-  headers: {
-    Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`,
-    accept: "application/json",
-  },
-};
+import { BASE_URL, options } from "./api.js";
 
 export const getTrendingMovies = async () => {
   const response = await fetch(`${BASE_URL}/trending/movie/day`, options);

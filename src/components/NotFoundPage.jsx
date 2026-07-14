@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const NotFoundPage = () => {
   return (
-    <div className="flex flex-col gap-y-20 items-center mt-20 p-10 h-40">
+    <div className="flex flex-col gap-y-20 items-center mt-20 p-10 h-40 mb-25">
       <h1 className="text-white font-bold text-4xl text-center">
         <span className="text-red-400">404 Error</span> Page are you looking for
         does not exist ❌

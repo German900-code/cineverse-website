@@ -5,12 +5,18 @@ import MediaGrid from "./MediaGrid";
 import MediaCard from "./MediaCard";
 import { NavLink } from "react-router-dom";
 import { FaArrowCircleLeft } from "react-icons/fa";
-import { mediaData } from "../data/mediaData";
+// import { mediaData } from "../data/mediaData";
 import NavButton from "./NavButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getPopularTVShows } from "../api/tv";
+import { getPopularMovies } from "../api/movies";
 
 const Movies = () => {
   const [popularMovies, setPopularMovies] = useState([]);
+
+  useEffect(() => {
+    getPopularMovies().then((data) => setPopularMovies(data.results));
+  }, []);
 
   return (
     <>
@@ -36,7 +42,11 @@ const Movies = () => {
             icon={<FaArrowCircleLeft />}
           />
         </div>
-        <MediaGrid movies={popularMovies} />
+        <MediaGrid
+          media={popularMovies}
+          mediaType="movie"
+          onRemoveFavorite={() => {}}
+        />
       </section>
     </>
   );

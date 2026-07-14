@@ -39,7 +39,10 @@ const Hero = ({ heroMovie }) => {
         <div className="mt-5 flex flex-wrap items-center gap-4 text-sm text-slate-300">
           <span>⭐ {heroMovie.vote_average?.toFixed(1)}</span>
           <span>{heroMovie.release_date?.split("-")[0]}</span>
-          <span>{heroMovie.genres?.[0]?.name}</span>
+          {heroMovie.genres?.[0]?.name ? (
+            <span>{heroMovie.genres?.[0]?.name}</span>
+          ) : null}
+          <span>Language: {heroMovie.original_language?.toUpperCase()}</span>
         </div>
         <button className="mt-6 w-[50%] md:w-fit rounded-full cursor-pointer bg-cyan-500 px-6 py-3 font-semibold text-slate-950 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30">
           <Link to={`/details/${heroMovie.id}`}>View Details</Link>

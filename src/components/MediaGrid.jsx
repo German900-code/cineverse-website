@@ -1,13 +1,20 @@
 import MediaCard from "./MediaCard";
 
-const MediaGrid = ({ movies = [] }) => {
+const MediaGrid = ({ media = [], mediaType, onRemoveFavorite }) => {
   return (
     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-      {movies.length > 0 ? (
-        movies.map((movie) => <MediaCard key={movie.id} item={movie} />)
+      {media.length > 0 ? (
+        media.map((item) => (
+          <MediaCard
+            key={item.id}
+            item={item}
+            mediaType={mediaType}
+            onRemoveFavorite={onRemoveFavorite}
+          />
+        ))
       ) : (
         <div className="col-span-full text-3xl text-center text-slate-400">
-          No movies available
+          No media available {media.length === 0 && "😕"}
         </div>
       )}
     </div>

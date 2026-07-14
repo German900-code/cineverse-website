@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getPopularMovies, getTrendingMovies } from "../api/tmdb";
+import { getPopularMovies, getTrendingMovies } from "../api/movies";
 import { FaArrowCircleRight } from "react-icons/fa";
 
 import MediaGrid from "./MediaGrid";
@@ -16,8 +16,8 @@ const Home = () => {
     getPopularMovies().then((data) => setPopularMovies(data.results));
   }, []);
 
-  console.log("HERO MOVIE: ", heroMovie);
-  console.log("POPULAR MOVIES: ", popularMovies);
+  // console.log("HERO MOVIE: ", heroMovie);
+  // console.log("POPULAR MOVIES: ", popularMovies);
   return (
     <section>
       <Hero heroMovie={heroMovie} />
@@ -30,7 +30,7 @@ const Home = () => {
             icon={<FaArrowCircleRight />}
           />
         </div>
-        <MediaGrid movies={popularMovies.slice(0, 5)} />
+        <MediaGrid media={popularMovies.slice(0, 5)} mediaType="movie" />
       </main>
     </section>
   );

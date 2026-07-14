@@ -1,9 +1,10 @@
 import MediaCard from "./MediaCard";
 import { FaArrowCircleLeft } from "react-icons/fa";
-import { mediaData } from "../data/mediaData";
+// import { mediaData } from "../data/mediaData";
 import NavButton from "./NavButton";
 import { useEffect, useState } from "react";
-import { getPopularMovies } from "../api/tmdb";
+// import { getPopularMovies } from "../api/tmdb";
+import { getPopularMovies } from "../api/movies";
 
 const TrendingMovies = () => {
   const [movies, setMovies] = useState([]);
