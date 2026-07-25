@@ -30,7 +30,7 @@ const Footer = () => {
         ))}
       </div>
       <p>Made with 🩵 by German</p>
-      <p className="mt-3">Movies data provided by IMDb</p>
+      <p className="mt-3">Movies data provided by TMDB API</p>
       <p className="mt-3">© {new Date().getFullYear()} CineWave Application</p>
     </footer>
   );

@@ -1,8 +1,18 @@
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import LoadingSpinner from "../../public/gifs/infinity-loading.gif";
+import HeroSkeleton from "./skeletons/HeroSkeleton";
 
-const Hero = ({ heroMovie }) => {
+const Hero = ({ heroMovie, isLoading, setIsLoading }) => {
   // const { id } = useParams();
+
+  // useEffect(() => {
+  //   setIsLoading(true);
+  // }, []);
+
+  if (isLoading) {
+    return <HeroSkeleton />;
+  }
 
   if (!heroMovie) {
     return (
@@ -19,6 +29,11 @@ const Hero = ({ heroMovie }) => {
 
   return (
     <section className="relative min-h-[420px] overflow-hidden bg-slate-950 px-4 py-10 text-white md:min-h-[520px] md:px-8 lg:px-12">
+      {/* {isLoading && (
+        <div className="flex items-center justify-center">
+          <img src={LoadingSpinner} alt="Loading..." />
+        </div>
+      )} */}
       <div
         className={`absolute inset-0 bg-[url('https://image.tmdb.org/t/p/w500${heroMovie.poster_path}')] bg-cover bg-center opacity-80`}
         style={{

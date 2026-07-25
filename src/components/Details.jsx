@@ -5,6 +5,7 @@ import { getMovieDetails } from "../api/movies";
 import NavButton from "./NavButton";
 import { getTVShowDetails } from "../api/tv";
 import { FavoritesContext } from "../context/FavoritesContext";
+import DetailsSkeleton from "./skeletons/DetailsSkeleton";
 
 const Details = () => {
   const { addFavorite, removeFavorite, favorites } =
@@ -16,19 +17,31 @@ const Details = () => {
   const mediaType = location.pathname.split("/")[1];
   const [movie, setMovie] = useState(null);
   const [tvShow, setTVShow] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     if (mediaType === "movie") {
-      getMovieDetails(id).then(setMovie);
+      getMovieDetails(id).then((data) => {
+        setMovie(data);
+        setIsLoading(false);
+      });
     }
     if (mediaType === "tv-show") {
-      getTVShowDetails(id).then(setTVShow);
+      getTVShowDetails(id).then((data) => {
+        setTVShow(data);
+        setIsLoading(false);
+      });
     }
   }, [id, mediaType]);
   // useEffect(() => {
   //   getMovieDetails(id).then(setMovie);
   //   getTVShowDetails(id).then(setTVShow);
   // }, [id]);
+
+  if (isLoading) {
+    return <DetailsSkeleton />;
+  }
   const media = movie || tvShow;
   if (!media) {
     const missingType = !movie ? "Movie" : "TV Show";

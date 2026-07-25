@@ -1,6 +1,17 @@
 import MediaCard from "./MediaCard";
+import MediaSkeleton from "./skeletons/MediaSkeleton";
 
-const MediaGrid = ({ media = [], mediaType, onRemoveFavorite }) => {
+const MediaGrid = ({ media = [], mediaType, onRemoveFavorite, isLoading }) => {
+  if (isLoading) {
+    return (
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <MediaSkeleton key={index} />
+        ))}
+      </div>
+    );
+  }
+
   return (
     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
       {media.length > 0 ? (

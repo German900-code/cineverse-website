@@ -10,12 +10,35 @@ import NavButton from "./NavButton";
 import { useState, useEffect } from "react";
 import { getPopularTVShows } from "../api/tv";
 import { getPopularMovies } from "../api/movies";
+import LoadingSpinner from "../../public/gifs/infinity-loading.gif";
 
 const Movies = () => {
   const [popularMovies, setPopularMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getPopularMovies().then((data) => setPopularMovies(data.results));
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const popularData = await getPopularMovies();
+        setPopularMovies(popularData.results);
+      } catch (error) {
+        console.error(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  return (
+    <>
+      {/* <MediaGrid
+        movies={popularMovies}
+      console.error(error.message);
+    } finally {
+      setIsLoading(false);
+    }
   }, []);
 
   return (
@@ -42,8 +65,14 @@ const Movies = () => {
             icon={<FaArrowCircleLeft />}
           />
         </div>
+        {/* {isLoading && (
+          <div className="flex items-center justify-center m-16">
+            <img src={LoadingSpinner} alt="Loading..." />
+          </div>
+        )} */}
         <MediaGrid
           media={popularMovies}
+          isLoading={isLoading}
           mediaType="movie"
           onRemoveFavorite={() => {}}
         />
