@@ -6,6 +6,7 @@ import NavButton from "./NavButton";
 import { getTVShowDetails } from "../api/tv";
 import { FavoritesContext } from "../context/FavoritesContext";
 import DetailsSkeleton from "./skeletons/DetailsSkeleton";
+import { MEDIA_TYPE } from "../constants/mediaType";
 
 const Details = () => {
   const { addFavorite, removeFavorite, favorites } =
@@ -21,23 +22,19 @@ const Details = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    if (mediaType === "movie") {
+    if (mediaType === MEDIA_TYPE.MOVIE) {
       getMovieDetails(id).then((data) => {
         setMovie(data);
         setIsLoading(false);
       });
     }
-    if (mediaType === "tv-show") {
+    if (mediaType === MEDIA_TYPE.TV_SHOW) {
       getTVShowDetails(id).then((data) => {
         setTVShow(data);
         setIsLoading(false);
       });
     }
   }, [id, mediaType]);
-  // useEffect(() => {
-  //   getMovieDetails(id).then(setMovie);
-  //   getTVShowDetails(id).then(setTVShow);
-  // }, [id]);
 
   if (isLoading) {
     return <DetailsSkeleton />;
@@ -89,11 +86,9 @@ const Details = () => {
             </div>
 
             <div className="mt-5 flex flex-wrap gap-2">
-              {/* {movie?.genre?.map((item) => ( */}
               <span className="rounded-full border border-cyan-500/30 px-3 py-1 text-sm text-cyan-300">
                 {media?.genres?.[0]?.name || "No genre available"}
               </span>
-              {/* ))} */}
             </div>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-300">
@@ -107,14 +102,13 @@ const Details = () => {
                 console.log("click");
                 addFavorite(
                   media
-                    ? { ...movie, type: "movie" }
-                    : { ...tvShow, type: "tv" },
+                    ? { ...movie, type: MEDIA_TYPE.MOVIE }
+                    : { ...tvShow, type: MEDIA_TYPE.TV_SHOW },
                 );
               }}
               className="mt-8 cursor-pointer rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-black transition hover:bg-cyan-400"
             >
-              {/* { isFavorite ? "Added to favorites" : "Add to favorites" } */}
-              Add to favorites
+              Add to Favorites
             </button>
           </div>
         </section>

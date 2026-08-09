@@ -1,5 +1,3 @@
-import React from "react";
-
 const MediaSkeleton = () => {
   return (
     <article className="animate-pulse overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 shadow-lg">

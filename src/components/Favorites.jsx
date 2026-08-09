@@ -3,12 +3,17 @@ import { FavoritesContext } from "../context/FavoritesContext";
 import { useContext } from "react";
 import MediaGrid from "./MediaGrid";
 import NavButton from "./NavButton";
+import { MEDIA_TYPE } from "../constants/mediaType";
 
 const Favorites = () => {
   const { favorites, setFavorites, removeFavorite } =
     useContext(FavoritesContext);
-  const favoriteMovies = favorites.filter((item) => item.type === "movie");
-  const favoriteTVShows = favorites.filter((item) => item.type === "tv");
+  const favoriteMovies = favorites.filter(
+    (item) => item.type === MEDIA_TYPE.MOVIE,
+  );
+  const favoriteTVShows = favorites.filter(
+    (item) => item.type === MEDIA_TYPE.TV_SHOW,
+  );
 
   return (
     <section className="min-h-screen px-4 py-8">
@@ -44,7 +49,7 @@ const Favorites = () => {
           </div>
           <MediaGrid
             media={favoriteMovies}
-            mediaType="movie"
+            mediaType={MEDIA_TYPE.MOVIE}
             onRemoveFavorite={removeFavorite}
           />
         </>
@@ -69,7 +74,7 @@ const Favorites = () => {
 
           <MediaGrid
             media={favoriteTVShows}
-            mediaType="tv"
+            mediaType={MEDIA_TYPE.TV_SHOW}
             onRemoveFavorite={removeFavorite}
           />
         </>

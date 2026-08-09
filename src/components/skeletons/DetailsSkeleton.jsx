@@ -25,9 +25,7 @@ const DetailsSkeleton = () => {
               <div className="h-4 w-8/12 rounded bg-slate-800" />
             </div>
 
-            <div className="mt-8 cursor-pointer rounded-xl bg-slate-800 px-6 py-3 font-semibold text-black transition h-12 w-44">
-              {/* { isFavorite ? "Added to favorites" : "Add to favorites" } */}
-            </div>
+            <div className="mt-8 cursor-pointer rounded-xl bg-slate-800 px-6 py-3 font-semibold text-black transition h-12 w-44"></div>
           </div>
         </section>
       </div>

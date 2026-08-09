@@ -1,45 +1,76 @@
 import { useSearchParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import MediaCard from "./MediaCard";
+import { searchMedia } from "../api/searchMedia";
+import { MEDIA_TYPE } from "../constants/mediaType";
+import MediaSkeleton from "./skeletons/MediaSkeleton";
 
 const SearchResults = () => {
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [searchParams] = useSearchParams();
   const query = searchParams.get("query") || "";
 
-  const mediaList = [
-    {
-      id: 1,
-      title: "Avatar",
-      year: "2009",
-      rating: 7.8,
-      type: "movie",
-      poster: "https://image.tmdb.org/t/p/w500/6EiRUJpuoeQPghrs3YNktfnqOVh.jpg",
-    },
-    {
-      id: 2,
-      title: "The last of us",
-      year: "2023",
-      rating: 9.2,
-      type: "tv",
-      poster:
-        "https://image.tmdb.org/t/p/w500/8zqF57u9123456789012345678901234.jpg",
-    },
-  ];
+  useEffect(() => {
+    if (!query.trim()) return;
 
-  const filteredMediaList = mediaList.filter((item) =>
-    item.title.toLowerCase().includes(query.toLowerCase()),
-  );
+    const fetchResults = async () => {
+      setIsLoading(true);
+
+      try {
+        const data = await searchMedia(query);
+        const filtered = data.results.filter(
+          (item) =>
+            item.media_type === MEDIA_TYPE.MOVIE ||
+            item.media_type === MEDIA_TYPE.TV_SHOW,
+        );
+        setData(filtered);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchResults();
+  }, [query]);
+
+  // if (isLoading) {
+  //   return <MediaSkeleton />;
+  // }
+
+  if (isLoading) {
+    return (
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <MediaSkeleton key={index} />
+        ))}
+      </div>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-slate-950 px-4 py-10 text-white">
       <section className="mx-auto max-w-7xl">
         <h2 className="mb-8 text-3xl font-bold text-cyan-400">
-          Search results for: {query}
+          Search results for "{query}" ({data.length})
         </h2>
-        {filteredMediaList.length > 0 ? (
+        {data.length > 0 ? (
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {filteredMediaList.map((item) => (
-              <MediaCard key={item.id} item={item} />
-            ))}
+            {data.map((item) => {
+              const mediaType =
+                item.media_type === "tv"
+                  ? MEDIA_TYPE.TV_SHOW
+                  : MEDIA_TYPE.MOVIE;
+              return (
+                <MediaCard
+                  key={item.id}
+                  item={item}
+                  mediaType={mediaType}
+                  isLoading={isLoading}
+                />
+              );
+            })}
           </div>
         ) : (
           <p className="text-slate-400">

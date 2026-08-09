@@ -1,15 +1,7 @@
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
-import LoadingSpinner from "../../public/gifs/infinity-loading.gif";
 import HeroSkeleton from "./skeletons/HeroSkeleton";
 
-const Hero = ({ heroMovie, isLoading, setIsLoading }) => {
-  // const { id } = useParams();
-
-  // useEffect(() => {
-  //   setIsLoading(true);
-  // }, []);
-
+const Hero = ({ heroMovie, isLoading }) => {
   if (isLoading) {
     return <HeroSkeleton />;
   }
@@ -60,7 +52,7 @@ const Hero = ({ heroMovie, isLoading, setIsLoading }) => {
           <span>Language: {heroMovie.original_language?.toUpperCase()}</span>
         </div>
         <button className="mt-6 w-[50%] md:w-fit rounded-full cursor-pointer bg-cyan-500 px-6 py-3 font-semibold text-slate-950 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30">
-          <Link to={`/details/${heroMovie.id}`}>View Details</Link>
+          <Link to={`/movie/${heroMovie.id}`}>View Details</Link>
         </button>
       </div>
     </section>

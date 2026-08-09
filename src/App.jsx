@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import { ToastContainer, Slide } from "react-toastify";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -8,13 +9,22 @@ import DetailsSkeleton from "./components/skeletons/DetailsSkeleton";
 
 const App = () => {
   return (
-    <FavoritesProvider>
-      <Header />
-      <Outlet />
-      <MobileNav />
-      {/* <DetailsSkeleton /> */}
-      <Footer />
-    </FavoritesProvider>
+    <>
+      <FavoritesProvider>
+        <Header />
+        <Outlet />
+        <MobileNav />
+        {/* <DetailsSkeleton /> */}
+        <Footer />
+      </FavoritesProvider>
+      <ToastContainer
+        transition={Slide}
+        newestOnTop
+        closeOnClick
+        pauseOnHover
+        draggable
+      />
+    </>
   );
 };
 
