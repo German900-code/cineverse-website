@@ -9,8 +9,7 @@ import DetailsSkeleton from "./skeletons/DetailsSkeleton";
 import { MEDIA_TYPE } from "../constants/mediaType";
 
 const Details = () => {
-  const { addFavorite, removeFavorite, favorites } =
-    useContext(FavoritesContext);
+  const { addFavorite } = useContext(FavoritesContext);
 
   const { id } = useParams();
   const location = useLocation();

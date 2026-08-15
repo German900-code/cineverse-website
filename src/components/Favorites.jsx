@@ -6,8 +6,7 @@ import NavButton from "./NavButton";
 import { MEDIA_TYPE } from "../constants/mediaType";
 
 const Favorites = () => {
-  const { favorites, setFavorites, removeFavorite } =
-    useContext(FavoritesContext);
+  const { favorites, removeFavorite } = useContext(FavoritesContext);
   const favoriteMovies = favorites.filter(
     (item) => item.type === MEDIA_TYPE.MOVIE,
   );

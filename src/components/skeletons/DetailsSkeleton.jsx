@@ -3,7 +3,6 @@ const DetailsSkeleton = () => {
     <main className="animate-pulse overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 shadow-lg h-full p-14">
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 h-10 w-40 rounded bg-slate-800" />
-        {/* <div /> */}
         <section className="grid gap-8 md:grid-cols-[300px_1fr]">
           <div className="aspect-[2/3] h-full  rounded-2xl shadow-lg shadow-cyan-500/20 bg-slate-800" />
           <div>

@@ -109,20 +109,23 @@ const Header = () => {
                 }
                 className={`h-12 w-80 rounded-full border ${error ? "border-red-500 shadow-red-500/20" : "border-cyan-500/30 focus:shadow-cyan-500/20"} bg-slate-900 px-5 text-slate-100 placeholder:text-slate-500 outline-none transition-all duration-300 focus:border-cyan-400 focus:shadow-lg focus:shadow-cyan-500/20`}
               />
-              <button
-                className="flex h-12 items-center justify-center gap-2 rounded-full bg-red-500 px-6 font-medium text-slate-950 transition-all duration-300 hover:bg-red-400 hover:shadow-lg hover:shadow-red-500/30 cursor-pointer"
-                onClick={() => setInputValue("")}
-              >
-                <FiTrash />
-              </button>
+              <div className="flex h-12 overflow-hidden rounded-full">
+                <button
+                  type="submit"
+                  className="flex h-full items-center justify-center gap-2 bg-cyan-500 px-7 font-medium text-slate-950 transition-all duration-300 hover:bg-cyan-300 hover:shadow-lg hover:shadow-cyan-500/30 cursor-pointer"
+                >
+                  <FiSearch size={22} />
+                  Search
+                </button>
 
-              <button
-                type="submit"
-                className="flex h-12 items-center justify-center gap-2 rounded-full bg-cyan-500 px-6 font-medium text-slate-950 transition-all duration-300 hover:bg-cyan-300 hover:shadow-lg hover:shadow-cyan-500/30 cursor-pointer"
-              >
-                <FiSearch />
-                Search
-              </button>
+                <button
+                  type="button"
+                  onClick={() => setInputValue("")}
+                  className="flex h-full w-16 shrink-0 items-center justify-center bg-slate-600 hover:bg-red-500 text-slate-950 transition-all duration-300 hover:shadow-lg hover:shadow-red-500/30 cursor-pointer"
+                >
+                  <FiTrash size={20} />
+                </button>
+              </div>
             </div>
             {error && (
               <span className="mt-2 text-center text-sm text-red-400 flex flex-row items-center gap-2 transition-all duration-300">
@@ -168,20 +171,6 @@ const Header = () => {
                   Search
                 </button>
               </div>
-              {/* <button
-                className="flex h-12 items-center justify-center gap-2 rounded-full bg-red-500 px-6 font-medium text-slate-950 transition-all duration-300 hover:bg-red-400 hover:shadow-lg hover:shadow-red-500/30 cursor-pointer"
-                onClick={() => setInputValue("")}
-              >
-                <FiTrash />
-              </button>
-
-              <button
-                type="submit"
-                className="flex h-12 items-center justify-center gap-2 rounded-full bg-cyan-500 px-6 font-medium text-slate-950 transition-all duration-300 hover:bg-cyan-300 hover:shadow-lg hover:shadow-cyan-500/30 cursor-pointer"
-              >
-                <FiSearch />
-                Search
-              </button> */}
             </div>
             {error && (
               <span
