@@ -31,9 +31,36 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Check TMDB token
+        env:
+          TMDB_TOKEN: ${{ secrets.VITE_TMDB_TOKEN }}
+        run: |
+          if [ -z "$TMDB_TOKEN" ]; then
+            echo "::error::VITE_TMDB_TOKEN secret is missing!"
+            exit 1
+          fi
+
+          echo "TMDB token is present."
+
+          STATUS=$(curl -s -o /tmp/tmdb.json -w "%{http_code}" \
+            -H "Authorization: Bearer $TMDB_TOKEN" \
+            -H "accept: application/json" \
+            "https://api.themoviedb.org/3/movie/popular")
+
+          echo "TMDB response status: $STATUS"
+
+          if [ "$STATUS" != "200" ]; then
+            echo "TMDB response:"
+            cat /tmp/tmdb.json
+            exit 1
+          fi
+
+          echo "TMDB API works!"
+
       - name: Build
         run: npm run build
-        env: VITE_TMDB_TOKEN: ${{ secrets.VITE_TMDB_TOKEN }}
+        env:
+          VITE_TMDB_TOKEN: ${{ secrets.VITE_TMDB_TOKEN }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
