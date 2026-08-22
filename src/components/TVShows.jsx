@@ -25,8 +25,6 @@ const TVShows = () => {
     fetchData();
   }, []);
 
-  console.log("Popular TV Shows: ", popularTVShows);
-
   return (
     <section className="mx-auto px-4 py-10 md:px-8 bg-black/90">
       <div className="mb-6 flex items-center justify-between">

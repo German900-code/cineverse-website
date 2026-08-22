@@ -21,7 +21,6 @@ const FavoritesProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
-    console.log("Favorites saved to localStorage:", favorites);
   }, [favorites]);
 
   const isFavorite = (id, mediaType) => {
@@ -30,14 +29,6 @@ const FavoritesProvider = ({ children }) => {
     );
   };
 
-  // const toggleFavorite = (item) => {
-  //   if (isFavorite(item.id, item.mediaType)) {
-  //     removeFavorite(item.id, item.mediaType);
-  //   } else {
-  //     addFavorite(item);
-  //   }
-  // };
-
   const removeFavoriteSilently = (id, mediaType) => {
     setFavorites((prev) =>
       prev.filter((item) => !(item.id === id && item.type === mediaType)),
@@ -45,8 +36,6 @@ const FavoritesProvider = ({ children }) => {
   };
 
   const addFavorite = (item) => {
-    console.log("ADD FAVORITE");
-
     setFavorites((prev) => {
       const isFavorite = prev.some(
         (favorite) =>
@@ -54,8 +43,6 @@ const FavoritesProvider = ({ children }) => {
       );
 
       if (isFavorite) return prev;
-
-      console.log("ADDED FAVORITE:", item);
 
       return [...prev, item];
     });

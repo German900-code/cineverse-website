@@ -12,7 +12,6 @@ const Home = () => {
   const [popularMovies, setPopularMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log("Is Loading: ", isLoading);
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
@@ -22,17 +21,12 @@ const Home = () => {
 
         setHeroMovie(trendingData.results[0]);
         setPopularMovies(popularData.results);
-        console.log("TRENDING DATA: ", trendingData);
-        console.log("POPULAR DATA: ", popularData);
       } catch (error) {
         console.error(error.message);
       } finally {
         setIsLoading(false);
       }
     };
-    console.log("HERO MOVIE: ", heroMovie);
-    console.log("POPULAR MOVIES: ", popularMovies);
-
     fetchData();
   }, []);
 

@@ -98,7 +98,6 @@ const Details = () => {
 
             <button
               onClick={() => {
-                console.log("click");
                 addFavorite(
                   media
                     ? { ...movie, type: MEDIA_TYPE.MOVIE }
