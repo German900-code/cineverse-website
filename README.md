@@ -1,4 +1,4 @@
-## 🎬 CineWave
+### 🎬 CineWave
 
 CineWave is a modern movie and TV show discovery web application buiilt with React.
 
@@ -6,7 +6,7 @@ It uses the TMDB API to provide information about movies and TV shows.
 
 ---
 
-# 🌐 Live Demo: https://german900-code.github.io/cinewave-website/
+### 🌐 Live Demo: https://german900-code.github.io/cinewave-website/
 
 ---
 
@@ -31,16 +31,16 @@ It uses the TMDB API to provide information about movies and TV shows.
 
 ## 🛠️ Technologies
 
-React
-Vite
-React Router
-Tailwind CSS
-Framer Motion
-React Icons
-React Toastify
-TMDB API
-GitHub Actions
-GitHub Pages
+- React
+- Vite
+- React Router
+- Tailwind CSS
+- Framer Motion
+- React Icons
+- React Toastify
+- TMDB API
+- GitHub Actions
+- GitHub Pages
 
 ## 📸 Screenshots
 
@@ -179,16 +179,16 @@ cinewave-website/
 
 CineWave was created as a personal React project to practice and improve skills in:
 
-React development
-API integration
-React Router
-State management
-Local storage
-Responsive UI development
-Loading and error states
-Git and GitHub
-CI/CD with GitHub Actions
-Production deployment
+- React development
+- API integration
+- React Router
+- State management
+- Local storage
+- Responsive UI development
+- Loading and error states
+- Git and GitHub
+- CI/CD with GitHub Actions
+- Production deployment
 
 ---
 

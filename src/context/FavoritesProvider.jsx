@@ -72,7 +72,9 @@ const FavoritesProvider = ({ children }) => {
       (item) => item.id === id && item.type === mediaType,
     );
     removeFavoriteSilently(id, mediaType);
-
+    // setFavorites((prev) =>
+    //   prev.filter((item) => !(item.id === id && item.type === mediaType)),
+    // );
     toast.info(
       `"${itemToRemove?.title || itemToRemove?.name}" removed from favorites 💔`,
 
@@ -94,6 +96,7 @@ const FavoritesProvider = ({ children }) => {
         addFavorite,
         removeFavorite,
         isFavorite,
+        // toggleFavorite,
       }}
     >
       {children}
