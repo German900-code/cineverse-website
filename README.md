@@ -1,4 +1,4 @@
-🎬 CineWave
+## 🎬 CineWave
 
 CineWave is a modern movie and TV show discovery web application buiilt with React.
 
@@ -6,11 +6,12 @@ It uses the TMDB API to provide information about movies and TV shows.
 
 ---
 
-🌐 Live Demo: https://german900-code.github.io/cinewave-website/
+# 🌐 Live Demo: https://german900-code.github.io/cinewave-website/
 
 ---
 
-✨ Features
+## ✨ Features
+
 🎬 Browse popular movies
 📺 Browse popular TV shows
 🔥 Discover trending movies
@@ -28,7 +29,8 @@ It uses the TMDB API to provide information about movies and TV shows.
 
 ---
 
-🛠️ Technologies
+## 🛠️ Technologies
+
 React
 Vite
 React Router
@@ -40,7 +42,7 @@ TMDB API
 GitHub Actions
 GitHub Pages
 
-📸 Screenshots
+## 📸 Screenshots
 
 📱Mobile
 
@@ -86,7 +88,7 @@ GitHub Pages
 
 ---
 
-🚀 Getting Started
+## 🚀 Getting Started
 
 1. Clone the repository
    git clone https://github.com/German900-code/cinewave-website.git
@@ -110,7 +112,7 @@ The application will be available at the local address provided by Vite.
 
 ---
 
-📦 Build
+## 📦 Build
 
 To create a production build:
 
@@ -122,7 +124,7 @@ npm run preview
 
 ---
 
-🌐 Deployment
+## 🌐 Deployment
 
 CineWave is deployed using GitHub Pages and GitHub Actions.
 
@@ -144,7 +146,7 @@ The TMDB token is provided to the GitHub Actions workflow through GitHub Secrets
 
 ---
 
-🎥 Data
+## 🎥 Data
 
 Movie and TV show information is provided by the TMDB API.
 
@@ -152,7 +154,8 @@ This application uses TMDB data but is not endorsed or certified by TMDB.
 
 ---
 
-📁 Project Structure
+## 📁 Project Structure
+
 cinewave-website/
 ├── .github/
 │ └── workflows/
@@ -172,7 +175,7 @@ cinewave-website/
 
 ---
 
-🎯 Project Goals
+## 🎯 Project Goals
 
 CineWave was created as a personal React project to practice and improve skills in:
 
@@ -189,7 +192,7 @@ Production deployment
 
 ---
 
-👨‍💻 Author
+# 👨‍💻 Author
 
 German
 
