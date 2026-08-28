@@ -7,6 +7,7 @@ import { getTVShowDetails } from "../api/tv";
 import { FavoritesContext } from "../context/FavoritesContext";
 import DetailsSkeleton from "./skeletons/DetailsSkeleton";
 import { MEDIA_TYPE } from "../constants/mediaType";
+import { motion } from "framer-motion";
 
 const Details = () => {
   const { addFavorite } = useContext(FavoritesContext);
@@ -63,18 +64,26 @@ const Details = () => {
           icon={<FaArrowAltCircleLeft />}
         />
         <section className="grid gap-8 md:grid-cols-[300px_1fr]">
-          <img
+          <motion.img
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
             src={
               media?.poster_path
                 ? `https://image.tmdb.org/t/p/w500${media.poster_path}`
                 : "https://via.placeholder.com/300x450?text=No+Image"
             }
             alt={media?.title || media?.name}
+            whileHover={{ scale: 1.05, border: "1px solid white" }}
             className="w-full rounded-2xl shadow-lg shadow-cyan-500/20"
           />
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+          >
             <h1 className="text-4xl font-bold text-cyan-400">
-              {media?.title || media?.name}
+              {media?.title || media?.name || "No title available"}
             </h1>
             <div className="mt-3 flex flex-wrap gap-3 text-sm text-gray-300">
               <span>{media?.release_date?.split("-")[0]}</span>
@@ -96,7 +105,7 @@ const Details = () => {
                 "No description available."}
             </p>
 
-            <button
+            <motion.button
               onClick={() => {
                 addFavorite(
                   media
@@ -104,11 +113,13 @@ const Details = () => {
                     : { ...tvShow, type: MEDIA_TYPE.TV_SHOW },
                 );
               }}
+              whileHover={{ border: "1px solid white" }}
+              transition={{ duration: 0.8 }}
               className="mt-8 cursor-pointer rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-black transition hover:bg-cyan-400"
             >
               Add to Favorites
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </section>
       </div>
     </main>

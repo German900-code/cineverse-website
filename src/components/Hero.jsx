@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import HeroSkeleton from "./skeletons/HeroSkeleton";
+import { motion } from "framer-motion";
 
 const Hero = ({ heroMovie, isLoading }) => {
   if (isLoading) {
@@ -32,12 +33,25 @@ const Hero = ({ heroMovie, isLoading }) => {
         <span className="mb-4 w-[50%] md:w-fit text-center rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-300">
           🔥 Trending now
         </span>
-        <h2 className="max-w-2xl text-4xl font-bold md:text-6xl">
+        <motion.h2
+          initial={{ opacity: 0, x: -30 }}
+          animate={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{ duration: 0.6 }}
+          className="max-w-2xl text-4xl font-bold md:text-6xl"
+        >
           {heroMovie.title || heroMovie.name}
-        </h2>
-        <p className="mt-4 max-w-xl text-sm leading-6 text-slate-300 md:text-base">
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-4 max-w-xl text-sm leading-6 text-slate-300 md:text-base"
+        >
           {heroMovie.description || heroMovie.overview}
-        </p>
+        </motion.p>
         <div className="mt-5 flex flex-wrap items-center gap-4 text-sm text-slate-300">
           <span>⭐ {heroMovie.vote_average?.toFixed(1)}</span>
           <span>{heroMovie.release_date?.split("-")[0]}</span>
@@ -46,9 +60,14 @@ const Hero = ({ heroMovie, isLoading }) => {
           ) : null}
           <span>Language: {heroMovie.original_language?.toUpperCase()}</span>
         </div>
-        <button className="mt-6 w-[50%] md:w-fit rounded-full cursor-pointer bg-cyan-500 px-6 py-3 font-semibold text-slate-950 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30">
+        <motion.button
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-6 w-[50%] md:w-fit rounded-full cursor-pointer bg-cyan-500 px-6 py-3 font-semibold text-slate-950 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30"
+        >
           <Link to={`/movie/${heroMovie.id}`}>View Details</Link>
-        </button>
+        </motion.button>
       </div>
     </section>
   );

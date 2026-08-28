@@ -4,6 +4,7 @@ import MediaCard from "./MediaCard";
 import { searchMedia } from "../api/searchMedia";
 import { MEDIA_TYPE } from "../constants/mediaType";
 import MediaSkeleton from "./skeletons/MediaSkeleton";
+import { motion } from "framer-motion";
 
 const SearchResults = () => {
   const [data, setData] = useState([]);
@@ -45,6 +46,35 @@ const SearchResults = () => {
     );
   }
 
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+      scale: 0.97,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.35,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <main className="min-h-screen bg-slate-950 px-4 py-10 text-white">
       <section className="mx-auto max-w-7xl">
@@ -52,22 +82,28 @@ const SearchResults = () => {
           Search results for "{query}" ({data.length})
         </h2>
         {data.length > 0 ? (
-          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+          >
             {data.map((item) => {
               const mediaType =
                 item.media_type === "tv"
                   ? MEDIA_TYPE.TV_SHOW
                   : MEDIA_TYPE.MOVIE;
               return (
-                <MediaCard
-                  key={item.id}
-                  item={item}
-                  mediaType={mediaType}
-                  isLoading={isLoading}
-                />
+                <motion.div key={item.id} variants={cardVariants}>
+                  <MediaCard
+                    item={item}
+                    mediaType={mediaType}
+                    isLoading={isLoading}
+                  />
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         ) : (
           <p className="text-slate-400">
             Nothing found 😕 Try another movie or TV show name.

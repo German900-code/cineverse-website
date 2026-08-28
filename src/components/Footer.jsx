@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const socialLinks = [
@@ -25,7 +26,12 @@ const Footer = () => {
       <div className="flex gap-3 justify-center mt-3 mb-3 text-xl text-white/60">
         {socialLinks.map((link) => (
           <NavLink to={link.url} key={link.id} target="_blank">
-            {link.icon}
+            <motion.span
+              whileHover={{ scale: 0.9 }}
+              transition={{ duration: 0.7 }}
+            >
+              {link.icon}
+            </motion.span>
           </NavLink>
         ))}
       </div>
