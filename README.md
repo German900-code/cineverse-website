@@ -12,20 +12,20 @@ It uses the TMDB API to provide information about movies and TV shows.
 
 ## ✨ Features
 
-🎬 Browse popular movies
-📺 Browse popular TV shows
-🔥 Discover trending movies
-🔎 Search for movies and TV shows
-⌨️ Search using the Enter key
-📄 View detailed information about movies and TV shows
-❤️ Add movies and TV shows to favorites
-💔 Remove items from favorites
-💾 Favorites are saved in localStorage
-🔔 Toast notifications for favorite actions
-⏳ Skeleton loading states
-🖼️ Fallback handling for missing images
-📱 Responsive design
-🚀 Deployed with GitHub Pages
+- 🎬 Browse popular movies
+- 📺 Browse popular TV shows
+- 🔥 Discover trending movies
+- 🔎 Search for movies and TV shows
+- ⌨️ Search using the Enter key
+- 📄 View detailed information about movies and TV shows
+- ❤️ Add movies and TV shows to favorites
+- 💔 Remove items from favorites
+- 💾 Favorites are saved in localStorage
+- 🔔 Toast notifications for favorite actions
+- ⏳ Skeleton loading states
+- 🖼️ Fallback handling for missing images
+- 📱 Responsive design
+- 🚀 Deployed with GitHub Pages
 
 ---
 
