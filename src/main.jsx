@@ -61,7 +61,8 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: "/cinewave-website",
+    basename: import.meta.env.BASE_URL,
+    // basename: "/cinewave-website",
   },
 );
 
